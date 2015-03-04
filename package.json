@@ -1,6 +1,6 @@
 {
   "name": "cordova-linkto",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Change www-link of Cordova project",
   "homepage": "https://github.com/ragingwind/cordova-linkto",
   "author": {
