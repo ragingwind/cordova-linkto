@@ -1,0 +1,8 @@
+{
+	"lib": {
+		"www": {
+			"uri": "/Users/ragingwind/Workspace/ragingwind/cordova-link-to/test/build",
+			"link": true
+		}
+	}
+}

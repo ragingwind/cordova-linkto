@@ -1,0 +1,32 @@
+{
+  "name": "cordova-linkto",
+  "version": "0.0.0",
+  "description": "Change www link direction to your app",
+  "homepage": "https://github.com/ragingwind/cordova-linkto",
+  "author": {
+    "name": "ragingwind",
+    "email": "ragingwind@gmail.com",
+    "url": "http://ragingwind.me"
+  },
+  "repository": "ragingwind/cordova-linkto",
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "cli.js"
+  ],
+  "keywords": [
+    "cordova-linkto",
+    "cordova"
+  ],
+  "dependencies": {
+    "meow": "^2.0.0"
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "bin": {
+    "cordova-linkto": "cli.js"
+  }
+}
