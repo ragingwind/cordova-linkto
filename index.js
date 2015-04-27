@@ -14,13 +14,6 @@ module.exports = function cordovaLinkTo(appPath, platformPath, cb) {
     var wwwPath = path.join(platformPath, 'www');
 
     fs.readlink(wwwPath, function(err, links) {
-      var configPath = path.join(platformPath, '.cordova/config.json');
-      var config = require(configPath);
-
-      if (config.lib.www.link !== true) {
-        throw new Error('Cordova project has no www link uri');
-      }
-
       // unlink previous path
       if (links) {
         fs.unlinkSync(wwwPath, 'dir');
@@ -29,14 +22,12 @@ module.exports = function cordovaLinkTo(appPath, platformPath, cb) {
       // link new path to platform/www
       fs.symlinkSync(appPath, wwwPath, 'dir')
 
-      // update config for new path
-      config.lib.www.uri = appPath;
-      fs.writeFile(configPath, JSON.stringify(config, 0, '\t'), function(err) {
-        cb && cb(err, {
+      if (cb) {
+        cb(err, {
         	changeTo: appPath,
         	changeFrom: links
         });;
-      });
+      }
     });
   });
 };
