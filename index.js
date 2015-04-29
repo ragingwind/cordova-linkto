@@ -8,7 +8,7 @@ module.exports = function cordovaLinkTo(appPath, platformPath, cb) {
 
   fs.exists(appPath, function(exists) {
     if (!exists) {
-      console.log('Target path is not exist. but will make a link', appPath);
+      console.log('Target path is not exist. but will create the link', appPath);
     }
 
     var wwwPath = path.join(platformPath, 'www');
@@ -24,8 +24,8 @@ module.exports = function cordovaLinkTo(appPath, platformPath, cb) {
 
       if (cb) {
         cb(err, {
-        	changeTo: appPath,
-        	changeFrom: links
+          changeTo: appPath,
+          changeFrom: links
         });;
       }
     });
