@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = function cordovaLinkTo(appPath, platformPath, cb) {
   var fs = require('fs');
   var path = require('path');
