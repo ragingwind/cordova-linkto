@@ -1,4 +1,4 @@
-#  [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-url]][daviddm-image]
+# cordova-linkto [![Build Status](https://travis-ci.org/ragingwind/cordova-linkto.svg?branch=master)](https://travis-ci.org/ragingwind/cordova-linkto)
 
 > Change www link direction to your app
 
@@ -28,12 +28,4 @@ $ cordova-linkto app ./platform
 
 ## License
 
-MIT © [ragingwind](http://ragingwind.me)
-
-
-[npm-url]: https://npmjs.org/package/cordova-linkto
-[npm-image]: https://badge.fury.io/js/cordova-linkto.svg
-[travis-url]: https://travis-ci.org/ragingwind/cordova-linkto
-[travis-image]: https://travis-ci.org/ragingwind/cordova-linkto.svg?branch=master
-[daviddm-url]: https://david-dm.org/ragingwind/cordova-linkto.svg?theme=shields.io
-[daviddm-image]: https://david-dm.org/ragingwind/cordova-linkto
+MIT © [Jimmy Moon](http://ragingwind.me)
