@@ -19,7 +19,7 @@
     "cordova"
   ],
   "dependencies": {
-    "meow": "^2.0.0"
+    "meow": "^3.7.0"
   },
   "devDependencies": {},
   "scripts": {
