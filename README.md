@@ -1,6 +1,6 @@
 # cordova-linkto [![Build Status](https://travis-ci.org/ragingwind/cordova-linkto.svg?branch=master)](https://travis-ci.org/ragingwind/cordova-linkto)
 
-> Change www link direction to your app
+> Change www link direction to your app for Cordova
 
 
 ## Install
