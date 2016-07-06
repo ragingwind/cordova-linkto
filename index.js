@@ -1,34 +1,33 @@
 'use strict';
 
-module.exports = function cordovaLinkTo(appPath, platformPath, cb) {
-  var fs = require('fs');
-  var path = require('path');
+const fs = require('fs');
+const path = require('path');
 
-  platformPath = path.resolve(process.cwd(), platformPath);
-  appPath = path.resolve(process.cwd(), appPath);
+module.exports = function (appPath, platformPath) {
+	return new Promise(resolve => {
+		appPath = path.resolve(process.cwd(), appPath);
+		platformPath = path.resolve(process.cwd(), platformPath);
 
-  fs.exists(appPath, function(exists) {
-    if (!exists) {
-      console.log('Target path is not exist. but will create the link', appPath);
-    }
+		fs.exists(appPath, exists => {
+			if (!exists) {
+				console.log('Target path is not exist. but will create the link', appPath);
+			}
 
-    var wwwPath = path.join(platformPath, 'www');
+			const www = path.join(platformPath, 'www');
+			fs.readlink(www, (_, links) => {
+				// unlink previous path
+				if (links) {
+					fs.unlinkSync(www, 'dir');
+				}
 
-    fs.readlink(wwwPath, function(err, links) {
-      // unlink previous path
-      if (links) {
-        fs.unlinkSync(wwwPath, 'dir');
-      }
+				// link new path to platform/www
+				fs.symlinkSync(appPath, www, 'dir');
 
-      // link new path to platform/www
-      fs.symlinkSync(appPath, wwwPath, 'dir')
-
-      if (cb) {
-        cb(err, {
-          changeTo: appPath,
-          changeFrom: links
-        });;
-      }
-    });
-  });
+				resolve({
+					changeTo: appPath,
+					changeFrom: links
+				});
+			});
+		});
+	});
 };

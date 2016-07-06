@@ -1,6 +1,6 @@
 # cordova-linkto [![Build Status](https://travis-ci.org/ragingwind/cordova-linkto.svg?branch=master)](https://travis-ci.org/ragingwind/cordova-linkto)
 
-> Change www link direction to your app for Cordova
+> Redirect cordova `www` link to new your app
 
 
 ## Install
@@ -13,10 +13,10 @@ $ npm install --save cordova-linkto
 ## Usage
 
 ```js
-var linkto = require('cordova-linkto');
+const cordovaLinkTo = require('cordova-linkto');
 
-linkto(appPath, platformPath, function(err) {
-    err && console.log(err);
+cordovaLinkTo(newAppPath, platformPath).then(res => {
+  // check result
 });
 ```
 

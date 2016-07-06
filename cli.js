@@ -1,19 +1,21 @@
 #!/usr/bin/env node
 'use strict';
-var meow = require('meow');
-var cordovaLinkTo = require('./');
 
-var cli = meow({
-  help: [
-    'Usage',
-    '  cordova-linkto <app-path> <platform-root-path>',
-    '',
-    'Example',
-    '  cordova-linkto build ./cordova'
-  ].join('\n')
+const meow = require('meow');
+const cordovaLinkTo = require('./');
+
+const cli = meow({
+	help: [`
+    Usage
+      cordova-linkto <app-path> <platform-root-path>
+
+    Example,
+      cordova-linkto build ./cordova
+  `]
 });
 
-cordovaLinkTo(cli.input[0], cli.input[1], function(err, res) {
-	err && console.log(err.toString());
-	console.log('Cordova www link is changed to', res.changeTo, 'from', res.changeFrom);
+cordovaLinkTo(cli.input[0], cli.input[1]).then(res => {
+	console.log(`Cordova Link has been changed from ${res.changeFrom} to ${res.changeTo}`);
+}).catch(err => {
+	console.err(err.toString());
 });

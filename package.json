@@ -1,7 +1,7 @@
 {
   "name": "cordova-linkto",
   "version": "0.0.3",
-  "description": "Change www-link of Cordova project",
+  "description": "Redirect cordova `www` link to new your app",
   "homepage": "https://github.com/ragingwind/cordova-linkto",
   "author": {
     "name": "ragingwind",
@@ -19,11 +19,17 @@
     "cordova"
   ],
   "dependencies": {
-    "meow": "^3.7.0"
+    "meow": "^3.7.0",
+    "os-random-tmpdir": "^0.1.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "ava": "^0.15.2",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.5.3",
+    "xo": "^0.16.0"
+  },
   "scripts": {
-    "test": "mocha"
+    "test": "xo && ava"
   },
   "bin": {
     "cordova-linkto": "cli.js"
