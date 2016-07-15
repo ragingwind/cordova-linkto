@@ -25,7 +25,6 @@
   "devDependencies": {
     "ava": "^0.15.2",
     "mkdirp": "^0.5.1",
-    "rimraf": "^2.5.3",
     "xo": "^0.16.0"
   },
   "scripts": {
