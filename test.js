@@ -12,8 +12,8 @@ const platformPath = path.join(tmp, 'platform');
 test.before(() => {
 	rimraf.sync(newAppPath);
 	mkdirp.sync(newAppPath);
-	mkdirp.sync(platformPath);
 	rimraf.sync(platformPath);
+	mkdirp.sync(platformPath);
 });
 
 test(t => {
